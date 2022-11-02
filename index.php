@@ -8,9 +8,10 @@
 
 <body>
 	
-
-	<h1 >test</h1>
-	
+<h2> &nbsp </h2>
+	<h1 >welkom!</h1>
+	<h2 >bij generic beers</h2>
+	<h2> &nbsp </h2>
 	
 </body>
 
