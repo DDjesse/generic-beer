@@ -6,5 +6,5 @@
                  'Reply-To: manku@example.com' . "\r\n" .
                  'X-Mailer: PHP/' . phpversion();
 
-                 ini_set()       mail($to, $subject, $message, $headers); ini_set()
+    ini_set()  . mail($to, $subject, $message, $headers); ini_set()
 ?>
