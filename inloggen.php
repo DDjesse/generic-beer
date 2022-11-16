@@ -35,10 +35,10 @@ $_SESSION["STATUS"] = "ACTIEF";
 $_SESSION["ROL"] = $rol;
  
  if($rol == 0 ){
-    echo"<script>location.href='index.php?page=webshop';
+    echo"<script>location.href='zakelijk.php';
     </script>";}
  elseif($rol == 1){
-    echo "<script>location.href='index.php?page=albums';
+    echo "<script>location.href='admin.php';
     </script>";
  } else{
     $melding .="Toegang geweigerd<br>";}

@@ -13,7 +13,7 @@ $email = htmlspecialchars($_POST['email']);
 $wachtwoord = htmlspecialchars($_POST['password']);
 $wachtwoordHash = password_hash($wachtwoord, PASSWORD_DEFAULT);
 
-$sql = "SELECT * FROM klant WHERE email = ?";
+$sql = "SELECT * FROM 'klant' WHERE email = ?";
 $stmt = $verbinding ->prepare($sql);
 $resultaat = $stmt -> fetch(PDO::FETCH_ASSOC);
 if($resultaat){
@@ -39,7 +39,7 @@ try{
 
 
 } 
-echo"<div id='melding>".$melding."</div>";
+echo"<div id='melding'>".$melding."</div>";
 }
 }
 ?>
