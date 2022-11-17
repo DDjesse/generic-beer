@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html class="background">
+    <?php include("navbar.php");
+    include("DBconfig.php"); ?>
+    
+<link rel="stylesheet" href="webshop.css">
 <div class="content">
     <form name = "inloggen" method = "POST" enctype = "multipart/form-data" action=""> 
             <p id="page_titel">Inloggen</p>

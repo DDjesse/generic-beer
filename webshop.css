@@ -56,3 +56,6 @@ li:hover{
     opacity: 0.8;
     filter: alpha(opacity=8);
 }
+html{
+    background:linear-gradient(rgb(27, 216, 27),rgb(191, 134, 27))
+}

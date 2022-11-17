@@ -1,5 +1,6 @@
 <?php
-include("registreren.html");
+include("navbar.php");
+include("bestelpart.html");
 include("DBconfig.php");
 if(isset($_POST["submit"])){
 $melding="";
@@ -10,17 +11,23 @@ $straat = htmlspecialchars($_POST['straat']);
 $postcode = htmlspecialchars($_POST['postcode']);
 $woonplaats = htmlspecialchars($_POST['woonplaats']);
 $email = htmlspecialchars($_POST['email']);
-$wachtwoord = htmlspecialchars($_POST['password']);
-$wachtwoordHash = password_hash($wachtwoord, PASSWORD_DEFAULT);
-$rol = filter_var($_POST['integer'],FILTER_VALIDATE_INT);
 
-$sql = "SELECT * FROM 'klant' WHERE email = ?";
+
+$hoeveelheid = filter_var($_POST['integer'],FILTER_VALIDATE_INT);
+
+$sql = "SELECT * FROM 'klant' WHERE ID = ?";
 $stmt = $verbinding ->prepare($sql);
 $resultaat = $stmt -> fetch(PDO::FETCH_ASSOC);
+if($hoeveelheid>24){
+    $melding="Onjuiste aantal biertjes";
+    echo"<div id='melding'>".$melding."</div>";   
+}
+else{
 if($resultaat){
-    $melding = "Dit e-mailadres is al geregistreerd";    
+    $melding = "Unknown error"; 
+    
 }else{
-    $sql ="INSERT INTO klant (ID, voornaam, achternaam, straat, postcode, woonplaats, email, wachtwoord, rol) values (null,?,?,?,?,?,?,?,?)";
+    $sql ="INSERT INTO particulier (ID, voornaam, achternaam, straatnaam, postcode, woonplaats, email,  hoeveelheid) values (null,?,?,?,?,?,?,?)";
     $stmt = $verbinding ->prepare($sql);
 try{
     $stmt->execute(array(
@@ -30,17 +37,17 @@ try{
         $postcode,
         $woonplaats,
         $email,
-        $wachtwoordHash,
-        $rol
+        $hoeveelheid
     ));
-    $melding ="Nieuw account aangemaakt.";
+    $melding ="Bestelling geplaats. Uw ontvang een mailtje binnen enkelen minuten";
 
 }   catch(PDOException $e){
-    $melding="Kon geen account aanmaken." . $e->getMessage();
+    $melding="Kon geen bestelling maken." . $e->getMessage();
 
 
 } 
 echo"<div id='melding'>".$melding."</div>";
+}
 }
 }
 ?>
