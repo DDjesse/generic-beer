@@ -5,7 +5,7 @@
   $bedrag=$_POST['bedrag'];
   
   $subject= "U heeft een bestelling geplaatst";
-  $body = "Beste $bedrijfnaam, \r\nU heeft een bestelling gedaan:\r\n\r\nnDe totale bedrag is $bedrag.
+  $body = "Geachte $bedrijfnaam, \r\nU bestelling is compleet:\r\n\r\n Het totale bedrag is $bedrag.
   \r\nDe bestelling wordt binnen 5 dagen bezorgd. \r\n\r\;
   
   if(mail($email, $subject, $body)){
