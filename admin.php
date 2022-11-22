@@ -29,7 +29,7 @@ echo '<center>';
             
         
             echo
-                 "Voornaam:" .$row["voornaam"].
+                 "Voornaam: " .$row["voornaam"].
                  " | Achternaam: " . $row["achternaam"].
                  " | E-mail: " . $row["email"].
                  " | Hoeveelheid: " . $row["hoeveelheid"].
