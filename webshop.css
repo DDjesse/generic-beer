@@ -63,5 +63,9 @@ li:hover{
     filter: alpha(opacity=8);
 }
 html{
-    background:linear-gradient(rgb(27, 216, 27),rgb(191, 134, 27))
+    background:rgb(210, 149, 16);
+}
+
+.Bform{
+    width: 400px;
 }
