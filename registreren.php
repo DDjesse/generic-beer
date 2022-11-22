@@ -1,6 +1,9 @@
 <?php
+
+include("adnavbar.php");
 include("registreren.html");
 include("DBconfig.php");
+
 if(isset($_POST["submit"])){
 $melding="";
 $voornaam= htmlspecialchars($_POST['voornaam']);
