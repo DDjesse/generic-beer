@@ -1,12 +1,12 @@
 <?php
-  $bedrijfnaam=$_POST['bedrijfnaamornaam'];
+  $bedrijfnaam=$_POST['voornaam'];
   $telef=$_POST['telef'];
   $email=$_POST['email'];
-  $bedrag=$_POST['bedrag'];
+  $bedrag=$_POST['hoeveelheid'];
   
   $subject= "U heeft een bestelling geplaatst";
-  $body = "Geachte $bedrijfnaam, \r\nU bestelling is compleet:\r\n\r\n Het totale bedrag is $bedrag.
-  \r\nDe bestelling wordt binnen 5 dagen bezorgd. \r\n\r\;
+  $body = "Geachte" . $bedrijfnaam .  "\r\nU" . "bestelling is compleet:\r\n\r\n Het totale bedrag is" . $bedrag.
+  "\r\nDe" . " bestelling wordt binnen 5 dagen bezorgd." ; 
   
   if(mail($email, $subject, $body)){
       echo "<script>alert('Het is gelukt om een bestelling te plaatsen!')</script>";

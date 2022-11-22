@@ -40,7 +40,7 @@ $_SESSION["STATUS"] = "ACTIEF";
 $_SESSION["ROL"] = $rol;
  
  if($rol == 0 ){
-    echo"<script>location.href='zakelijk.php';
+    echo"<script>location.href='bestelpartzakkelijk.php';
     </script>";}
  elseif($rol == 1){
     echo "<script>location.href='admin.php';
