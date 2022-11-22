@@ -9,12 +9,12 @@
         <nav>
        
             <a class=navbutton href="registreren.php">Account aanmaakt</a>
+            <a class=reserveren href="accountmngmnt.php">Account management</a>
             
             
             
             <a class=reserveren href="bestellingmngmnt.php">Bestelling management</a>
-            <a class=reserveren href="accountmngmnt.php">Account management</a>
-            
+            <a class=navbutton href="inloggen.php">Log uit</a>
         </nav>
 
     </header>
