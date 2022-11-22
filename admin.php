@@ -41,36 +41,8 @@ echo '<center>';
                  "<br>";
             
         }
-        echo'</div>'.
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>".
-        "<br>";
+        echo'</div>';
+
     } 
     else {
         echo "0 results";
