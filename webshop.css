@@ -14,9 +14,9 @@ body {
     justify-content: center;
 }
 .icon{
-    border-radius:50%;
-    width: 60px;
-    line-height:60px;
+    border-radius: 15px;
+    width: 50px;
+    line-height:50px;
     padding: 0; margin: 0;
     background: #70c26f;
     color:#fff;
@@ -44,6 +44,7 @@ ul{
 
 }
 li {
+    border-radius: 15px;
     padding: 0; margin: 0;
     list-style-type:none;
     width:33%;
