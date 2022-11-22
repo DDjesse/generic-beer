@@ -53,4 +53,8 @@ transition: 0.5s;
     padding: 6px;
     float: right;
  }
+ .Bform{
+    width: 400px;
+    border-radius: 25px;
+}
 

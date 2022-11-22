@@ -44,10 +44,6 @@ ul{
     padding: 0 ; margin:0; width:100%;
 
 }
-
-form{
-    border-radius: 25px;
-}
 li {
     border-radius: 15px;
     padding: 0; margin: 0;
@@ -68,4 +64,9 @@ html{
 
 .Bform{
     width: 400px;
+    border-radius: 25px;
+}
+.Aform{
+    width: 200px;
+    border-radius: 25px;
 }
