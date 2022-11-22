@@ -14,7 +14,7 @@ body {
     justify-content: center;
 }
 .icon{
-    border-radius:50%;
+    border-radius: 15px;
     width: 50px;
     line-height:50px;
     padding: 0; margin: 0;
@@ -44,6 +44,7 @@ ul{
 
 }
 li {
+    border-radius: 15px;
     padding: 0; margin: 0;
     list-style-type:none;
     width:33%;
