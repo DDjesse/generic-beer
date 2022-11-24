@@ -12,7 +12,7 @@ $password="";
 $db="authentic beer";
 
 $conn = new mysqli($servername,$username,$password,$db);
-$query = "SELECT * FROM `particulier`";
+$query = "SELECT * FROM `bpart`";
 
 $result = mysqli_query($conn, $query);
 echo '<div class="OutputClass" >'.

@@ -1,19 +1,40 @@
 <?php
 include("navbar.php");
-include("bestelpart.html");
+include("bzakelijk.html");
 include("DBconfig.php");
+
 if(isset($_POST["submit"])){
 $melding="";
-$voornaam= htmlspecialchars($_POST['voornaam']);
-$achternaam= htmlspecialchars($_POST['achternaam']);
-$klant = $voornaam . " " .$achternaam;
-$straat = htmlspecialchars($_POST['straat']);
-$postcode = htmlspecialchars($_POST['postcode']);
-$woonplaats = htmlspecialchars($_POST['woonplaats']);
-$email = htmlspecialchars($_POST['email']);
+include("logger.php");
+$email = $float;
+$servername="localhost";
+$username="root";
+$password="";
+$db="authentic beer";
+
+$conn = new mysqli($servername,$username,$password,$db);
+$query = "SELECT * FROM `klant1` Where email = $email";
+
+$result = mysqli_query($conn, $query);
 
 
 $hoeveelheid = filter_var($_POST['integer']);
+
+while($loop ==1)
+{
+    $row = $result->fetch_assoc();
+
+$voornaam = $row;
+$achternaam = $row;
+$straat = $row;
+$postcode = $row;
+$woonplaats = $row;
+$email = $row;
+
+    
+}
+
+
 
 $sql = "SELECT * FROM 'klant1' WHERE ID = ?";
 $stmt = $verbinding ->prepare($sql);
@@ -21,7 +42,7 @@ $resultaat = $stmt -> fetch(PDO::FETCH_ASSOC);
 
 
 
-if($hoeveelheid>24){
+if($hoeveelheid>1000){
     $melding="Onjuiste aantal biertjes";
     echo"<div id='melding'>".$melding."</div>";   
 }
@@ -30,7 +51,7 @@ if($resultaat){
     $melding = "Unknown error"; 
     
 }else{
-    $sql ="INSERT INTO bpart (ID, voornaam, achternaam, straatnaam, postcode, woonplaats, email,  hoeveelheid) values (null,?,?,?,?,?,?,?)";
+    $sql ="INSERT INTO bzak (ID, voornaam, achternaam, straatnaam, postcode, woonplaats, email,  hoeveelheid) values (null,?,?,?,?,?,?,?)";
     $stmt = $verbinding ->prepare($sql);
 try{
     $stmt->execute(array(

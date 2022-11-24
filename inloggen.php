@@ -19,10 +19,11 @@
 if(isset($_POST["submit"])){
     $melding = "";
     $email = htmlspecialchars($_POST["e-mail"]);
+    include("logger.php");
     $wachtwoord = htmlspecialchars($_POST["wachtwoord"]);
 
     try{
-        $sql = "SELECT * FROM klant WHERE email = ?";
+        $sql = "SELECT * FROM klant1 WHERE email = ?";
         $stmt = $verbinding -> prepare($sql);
         $stmt -> execute(array($email));
         $resultaat = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -40,7 +41,7 @@ $_SESSION["STATUS"] = "ACTIEF";
 $_SESSION["ROL"] = $rol;
  
  if($rol == 0 ){
-    echo"<script>location.href='bestelpartzakkelijk.php';
+    echo"<script>location.href='bzakelijk.php';
     </script>";}
  elseif($rol == 1){
     echo "<script>location.href='admin.php';
