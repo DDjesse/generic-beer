@@ -15,7 +15,7 @@ $email = htmlspecialchars($_POST['email']);
 
 $hoeveelheid = filter_var($_POST['integer']);
 
-$sql = "SELECT * FROM 'klant' WHERE ID = ?";
+$sql = "SELECT * FROM 'klant1' WHERE ID = ?";
 $stmt = $verbinding ->prepare($sql);
 $resultaat = $stmt -> fetch(PDO::FETCH_ASSOC);
 
