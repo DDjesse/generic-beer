@@ -5,38 +5,58 @@ include("DBconfig.php");
 
 if(isset($_POST["submit"])){
 $melding="";
-include("logger.php");
-$email = $float;
+
+
 $servername="localhost";
 $username="root";
 $password="";
 $db="authentic beer";
 
 $conn = new mysqli($servername,$username,$password,$db);
-$query = "SELECT * FROM `klant1` Where email = $email";
 
-$result = mysqli_query($conn, $query);
+$query2 = "SELECT * FROM `log`";
 
+$result2 =mysqli_query($conn, $query2);
 
+if ($result2->num_rows > 0) 
+{
+    // OUTPUT DATA OF EACH ROW
+    while($row = $result2->fetch_assoc())
+    {
+        
+    $email = $row["email"];
+  
+        
+    }
+}else{
+    echo"<h1>big problem </h1>";
+   
+}
+
+    $query = "SELECT * FROM `klant` Where email = '$email'";
+    $result = mysqli_query($conn, $query);
 $hoeveelheid = filter_var($_POST['integer']);
 
-while($loop ==1)
-{
-    $row = $result->fetch_assoc();
+  
 
-$voornaam = $row;
-$achternaam = $row;
-$straat = $row;
-$postcode = $row;
-$woonplaats = $row;
-$email = $row;
+while($row = $result->fetch_assoc())
+{
+     
+
+$voornaam = $row["voornaam"];
+$achternaam = $row["achternaam"];
+$straat = $row["straat"];
+$postcode = $row["postcode"];
+$woonplaats = $row["woonplaats"];
+$email = $row["email"];
+
 
     
 }
 
 
 
-$sql = "SELECT * FROM 'klant1' WHERE ID = ?";
+$sql = "SELECT * FROM 'klant' WHERE ID = ?";
 $stmt = $verbinding ->prepare($sql);
 $resultaat = $stmt -> fetch(PDO::FETCH_ASSOC);
 
@@ -53,6 +73,7 @@ if($resultaat){
 }else{
     $sql ="INSERT INTO bzak (ID, voornaam, achternaam, straatnaam, postcode, woonplaats, email,  hoeveelheid) values (null,?,?,?,?,?,?,?)";
     $stmt = $verbinding ->prepare($sql);
+    
 try{
     $stmt->execute(array(
         $voornaam,

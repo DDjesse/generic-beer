@@ -19,11 +19,11 @@
 if(isset($_POST["submit"])){
     $melding = "";
     $email = htmlspecialchars($_POST["e-mail"]);
-    include("logger.php");
+    
     $wachtwoord = htmlspecialchars($_POST["wachtwoord"]);
 
     try{
-        $sql = "SELECT * FROM klant1 WHERE email = ?";
+        $sql = "SELECT * FROM klant WHERE email = ?";
         $stmt = $verbinding -> prepare($sql);
         $stmt -> execute(array($email));
         $resultaat = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -41,6 +41,18 @@ $_SESSION["STATUS"] = "ACTIEF";
 $_SESSION["ROL"] = $rol;
  
  if($rol == 0 ){
+    $sql = "INSERT INTO log (ID, email) values (null,?)";
+    $stmt = $verbinding ->prepare($sql);
+    try{
+    $stmt->execute(array(
+        $email));
+    }
+    catch(PDOException $e){
+        echo"<p>";
+        echo"unkown error";
+        echo"<p>";
+
+    }
     echo"<script>location.href='bzakelijk.php';
     </script>";}
  elseif($rol == 1){

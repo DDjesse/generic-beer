@@ -23,7 +23,7 @@ $resultaat = $stmt -> fetch(PDO::FETCH_ASSOC);
 if($resultaat){
     $melding = "Dit e-mailadres is al geregistreerd";    
 }else{
-    $sql ="INSERT INTO klant1 (ID, voornaam, achternaam, straat, postcode, woonplaats, email, wachtwoord, rol) values (null,?,?,?,?,?,?,?,?)";
+    $sql ="INSERT INTO klant (ID, voornaam, achternaam, straat, postcode, woonplaats, email, wachtwoord, rol) values (null,?,?,?,?,?,?,?,?)";
     $stmt = $verbinding ->prepare($sql);
 try{
     $stmt->execute(array(

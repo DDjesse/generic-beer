@@ -30,7 +30,7 @@ if($resultaat){
     $melding = "Unknown error"; 
     
 }else{
-    $sql ="INSERT INTO bpart (ID, voornaam, achternaam, straatnaam, postcode, woonplaats, email,  hoeveelheid) values (null,?,?,?,?,?,?,?)";
+    $sql ="INSERT INTO particulier (ID, voornaam, achternaam, straatnaam, postcode, woonplaats, email,  hoeveelheid) values (null,?,?,?,?,?,?,?)";
     $stmt = $verbinding ->prepare($sql);
 try{
     $stmt->execute(array(
