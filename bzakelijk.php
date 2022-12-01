@@ -33,7 +33,7 @@ if ($result2->num_rows > 0)
    
 }
 
-    $query = "SELECT * FROM `klant` Where email = '$email'";
+    $query = "SELECT * FROM `klant1` Where email = '$email'";
     $result = mysqli_query($conn, $query);
 $hoeveelheid = filter_var($_POST['integer']);
 
@@ -56,7 +56,7 @@ $email = $row["email"];
 
 
 
-$sql = "SELECT * FROM 'klant' WHERE ID = ?";
+$sql = "SELECT * FROM 'klant1' WHERE ID = ?";
 $stmt = $verbinding ->prepare($sql);
 $resultaat = $stmt -> fetch(PDO::FETCH_ASSOC);
 
